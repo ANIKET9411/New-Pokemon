@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+        
+    
+        body{
+            font-family: "Aladin", system-ui;
+            padding: 0;
+            margin: 0;
+            width:100vw;
+            height: 100vh;
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width:100vw;
+            /* height: 100vh; */
+            background-color: black;
+        }
+        .front,.back{
+            width:100%;
+            /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
+        }
+        .back{
+            display: none;
+        }
+        .cards{
+            transform: perspective(800px) rotateY(0deg);
+            padding:2% 0;
+            margin:1%;
+            height:30%;
+            transition: all ease 1s;
+            /* border:10px dotted black; */
+            /* position: relative; */
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 white;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        .front{
+            position: relative;
+        }
+        .semi{
+            text-align: center;
+            background-color: red;
+            height:100px;
+            width:100%;
+            position: absolute;
+            top:-19%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            margin-bottom: 30px;
+            z-index: -1;
+        }
+        .cards:hover{
+            transition: all ease 1s;
+            transform:rotateY(180deg);
+
+        }
+        .cards:hover .front{
+            display:none;
+        }
+        .cards:hover .back{
+            display:block;
+            transform:scaleX(-1) rotateY(0deg);
+        }
+        .aria{
+            background-color: black;
+            text-align: center;
+            padding:30px;
+        }
+        img{
+            margin:15px;
+            box-shadow: 0 0 10px 0 black;
+            border-radius: 50%;
+            height: 35%;
+            padding: 30px;
+        }
+        h1{
+            font-size: 4rem;
+            color: white;
+        }
+        select,button,input{
+            height:40px;
+            width:15%;
+            font-size: 1.3rem;
+        }
+        .name{
+            border:2px solid black;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding:10px;
+            border-radius: 20px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="aria">
+        <h1>PokeMon</h1>
+        <select name="carddata" id="carddata" >
+            <option value="type" selected>type</option>
+            <option value="grass">Grass</option>
+            <option value="fire">Fire</option>
+            <option value="bug">Bug</option>
+            <option value="water">Water</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="electric">Electric</option>
+            <option value="ground">Ground</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="ghost">Ghost</option>
+            <option value="ice">Ice</option>
+            <option value="dragon">Dragon</option>
+        </select>
+        <button class="typed">Search By type</button>
+        <input type="text" placeholder="Search by species">
+    </div>
+    
+    <div class="container">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
